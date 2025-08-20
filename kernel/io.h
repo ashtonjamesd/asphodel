@@ -3,9 +3,11 @@
 
 #include <stdint.h>
 
-#define VGA_ADDRESS 0xB8000
+#define VGA_ADDRESS 0xb8000
 #define VGA_WIDTH   80
 #define VGA_HEIGHT  25
+
+#define VGA_COLOUR_PRIMARY VGA_BRIGHT_WHITE
 
 enum {
     VGA_BLACK = 0x0,
@@ -28,6 +30,7 @@ enum {
 
 void cls(void);
 void vga_put_char(int row, int col, char c, char color);
-void vga_put_str(int row, int col, char *s, char color);
+void puts(char *s);
+void putc(char c);
 
 #endif
